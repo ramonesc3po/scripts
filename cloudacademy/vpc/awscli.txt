@@ -1,0 +1,43 @@
+# create a vpc
+
+aws ec2 create-vpc --cidr block 10.10.0.0/16
+
+# create a subnet in vpc
+
+aws ec2 create-subnet --vpc-id <vpc ID> -cidr 10.10.0.0./20 -- availability-zone <AZ>
+
+# create a internet gateway
+
+aws ec2 create-internet-gateway
+
+# attach internet gateway in vpc
+
+aws ec2 attach-internet-gateway --internet-gateway-id <IGW ID> --vpc-id <VPC ID>
+
+# create a route table
+
+aws ec2 create-route-table --vpc-id <VPC ID>
+
+# create routes in route table
+
+aws ec2 create-route --route-table-id <RTB ID> --destination-cidr-block 0.0.0.0/0 --gateway-id <IGW ID>
+
+# associate subnet with route table
+
+aws ec2 associate-route-table --route-table-id <RTB ID> --subnet-id <Subnet ID> --subnet-id <Subnet ID>
+
+# enable dns resolve hostnames
+
+aws ec2 modify-vpc-attribute --vpc-id <VPC ID> --enable-dns-hostnames "("\Value\":true)"
+
+# create dhcp
+
+aws ec2 create-dhcp-options --dhcp-configuration "Key=domain-name,Values=example.com" "Key=domain-name-servers,Values=155.1.2.3"
+
+# associate dhcp for VPC
+
+aws ec2 associate-dhcp-options --dhcp-options-id <DOPT ID> --vpc-id <VPC ID>
+
+# create db subnetgroup
+
+aws rds create-db-subnet-group --db-subnet-group-name <name> --db-subnet-group-description <desc> --subnet-ids <Subnet IDs>

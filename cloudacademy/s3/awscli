@@ -1,0 +1,11 @@
+# first you have install aws-cli
+
+#copy aws s3 to ec2 instance
+
+aws s3 cp s3://bucket/folder/file.txt directory/ec2/ --region=ap-northeast-1
+
+#upload file
+
+aws s3 cp directory/ec2/ s3://bucket/folder/file.txt --region=ap-northeast-1
+
+# automate backups S3 Life Cycle

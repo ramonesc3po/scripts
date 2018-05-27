@@ -1,0 +1,3 @@
+# check health status elb
+
+aws elb describe-instance-health --load-balancer-name lbnbbp --region=us-east-1

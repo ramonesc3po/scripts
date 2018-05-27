@@ -1,0 +1,3 @@
+# mount preference fstab
+
+/dev/xvdf /media/drive ext4 default,nofail 0 2
