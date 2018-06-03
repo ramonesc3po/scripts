@@ -1,0 +1,11 @@
+# List accounts
+
+bitcoin-cli -rpcconnect=localhost -rpcport=8425 -rpcuser=userrpc -rpcpassword=passwordrpc listaccounts
+
+# List wallet address
+
+bitcoin-cli -rpcconnect=localhost -rpcport=8425 -rpcuser=userrpc -rpcpassword=passwordrpc getaccountaddress nomedacontaouid
+
+# List account with wallet getaccountaddress
+
+bitcoin-cli -rpconnect=localhost -rpcport=8425 -rpcuser=userrpc -rpcpasssowrd=passwordrpc getaccount
